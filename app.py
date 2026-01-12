@@ -35,19 +35,19 @@ while True: # program loop
         print("---------\n")
     #DELETE EXPENSE
     elif action.lower() == 'd' or action.lower() == "delete" """ or action.lower() == 'l' or action.lower() == "löschen" """ :
-        unwanted_item = input("Was soll gelöscht werden? (To delete every expense type 'all') ")
+        unwanted_item = input("What do you want to delete? (To delete every expense type 'all') ")
         hello.delete_row(unwanted_item)
     #ADD EXPENSE
     elif action.lower() == "a" or action.lower() == "add":    
-        expense = input("Kategorie (z.B. Essen, Fahrtkosten): ")
+        expense = input("Cateegory (e.g. food, transport, uni): ")
         price = input("How much will that cost in €?: ")
         try:
             price = float(price)
             if hello.speichern(price, expense):
-                print("Alright,it went through")
+                print("Alright, it went through")
             
         except ValueError:
-            print("Fehler: Bitte eine Zahl eingeben.") 
+            print("Error: Input a number.") 
     #VIEW BALANCE
     elif action.lower() == "vb" or action.lower() == "v":
         print("You have " + str(round(hello.get_balance(), 2)) +"€\n")  
