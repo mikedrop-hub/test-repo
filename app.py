@@ -1,35 +1,38 @@
 import hello
 import time
+import random
 
-DATEI = "ausgaben.csv"
+print(random.random())
+
+DATEI = "expenses.csv"
 
 print("--- TOP TIER BUDGETING PROGRAM (the people love it) ---\n")
 
 while True: # program loop
     hello.print_total_balance()
-    time.sleep(0.4)
+    time.sleep(0.4 * random.random())
     print("Show list of expenses: S")
-    time.sleep(0.2)
+    time.sleep(0.2 * random.random())
     print("Add an expense: A")
-    time.sleep(0.1) 
+    time.sleep(0.1 * random.random()) 
     print("Delete an expense: D") 
-    time.sleep(0.1) 
+    time.sleep(0.1 * random.random()) 
     print("Modify balance: M" )
     print("View balance: V")
-    time.sleep(0.1) 
-    time.sleep(0.3)
+    time.sleep(0.1 * random.random()) 
+    time.sleep(0.3 * random.random())
     print("Exit: E")
     action = input("\n")
     #EXIT
     if action.lower() == "exit" or action.lower() == 'e':
-        time.sleep(0.7)
+        time.sleep(0.7 * random.random())
         break
     #SHOW EXPENSES
     elif action.lower() == "show" or action.lower() == 's':
-        print("---YOUR EXPENSES---")
+        print("---YOUR EXPENSES---(%s)---" % hello.get_amount_of_rows(DATEI)) 
         hello.print_list_of_things(DATEI)
-        print("\nThese all together cost "+ str(round(hello.sum_of_total_prices(), 2)) +"€\n")
-        print("---------")
+        print("\nThese all together cost "+ str(round(hello.sum_of_total_prices(), 2)) +"€") if hello.get_amount_of_rows(DATEI) > 1 else 1
+        print("---------\n")
     #DELETE EXPENSE
     elif action.lower() == 'd' or action.lower() == "delete" """ or action.lower() == 'l' or action.lower() == "löschen" """ :
         unwanted_item = input("Was soll gelöscht werden? (To delete every expense type 'all') ")

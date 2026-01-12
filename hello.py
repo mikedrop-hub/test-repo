@@ -3,7 +3,7 @@ import os
 import wikipediaapi as wiki
 
 # Defining stuff yk the drill
-DATEI = "ausgaben.csv"
+DATEI = "expenses.csv"
 BALANCE_FILE = "balance.csv"
 EMPTY_ROW = ["", ""]
 
