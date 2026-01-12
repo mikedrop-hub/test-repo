@@ -3,7 +3,7 @@ import os
 import wikipediaapi as wiki
 
 # Defining stuff yk the drill
-DATEI = "ausgaben.csv"
+DATEI = "expenses.csv"
 BALANCE_FILE = "balance.csv"
 EMPTY_ROW = ["", ""]
 
@@ -72,7 +72,9 @@ def check_if_sure(thing_that_is_boutta_be_done) -> bool:
     thing_that_is_boutta_be_done = str(thing_that_is_boutta_be_done)
     yes_or_no = input("Are you sure you want to "+ thing_that_is_boutta_be_done +"? (y or anything else) ")
     if yes_or_no.lower() == "y":
+        print("")
         return True
+    print("")
     return False
 
 def get_balance() -> float:
@@ -108,26 +110,27 @@ def delete_row(item_to_be_deleted):
     to_be_deleted_items: list[list[str]] = []
     counter_of_to_be_deleted_items = 0
     if item_to_be_deleted.lower() == "all":
-        clear_file(DATEI)
-
-    with open(DATEI, mode='r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            if row.__contains__(str(item_to_be_deleted)):
-                to_be_deleted_items.append(row)
-                counter_of_to_be_deleted_items += 1
-                continue
-            else: 
-                new_file.append(row)
-    if counter_of_to_be_deleted_items > 0:
-        if check_if_sure("delete " + str(counter_of_to_be_deleted_items) + " thing(s)"):
+        if check_if_sure("delete every expense"):
             clear_file(DATEI)
-            with open(DATEI, mode='a') as f:
-                writer = csv.writer(f)
-                for row in new_file:
-                    writer.writerow(row)
-    else:
-        print(item_to_be_deleted +" might be a typo because I couldn't find it.")   
+    else: 
+        with open(DATEI, mode='r') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                if row.__contains__(str(item_to_be_deleted)):
+                    to_be_deleted_items.append(row)
+                    counter_of_to_be_deleted_items += 1
+                    continue
+                else: 
+                    new_file.append(row)
+        if counter_of_to_be_deleted_items > 0:
+            if check_if_sure("delete " + str(counter_of_to_be_deleted_items) + " thing(s)"):
+                clear_file(DATEI)
+                with open(DATEI, mode='a') as f:
+                    writer = csv.writer(f)
+                    for row in new_file:
+                        writer.writerow(row)
+        else:
+            print(item_to_be_deleted +" might be a typo because I couldn't find it.")   
 
 def clear_balance():
     clear_file(BALANCE_FILE)
