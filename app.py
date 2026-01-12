@@ -2,8 +2,6 @@ import hello
 import time
 import random
 
-print(random.random())
-
 DATEI = "expenses.csv"
 
 print("--- TOP TIER BUDGETING PROGRAM (the people love it) ---\n")
@@ -14,12 +12,12 @@ while True: # program loop
     print("Show list of expenses: S")
     time.sleep(0.2 * random.random())
     print("Add an expense: A")
-    time.sleep(0.1 * random.random()) 
-    print("Delete an expense: D") 
-    time.sleep(0.1 * random.random()) 
+    time.sleep(0.1 * random.random())
+    print("Delete an expense: D")
+    time.sleep(0.1 * random.random())
     print("Modify balance: M" )
     print("View balance: V")
-    time.sleep(0.1 * random.random()) 
+    time.sleep(0.1 * random.random())
     time.sleep(0.3 * random.random())
     print("Exit: E")
     action = input("\n")
@@ -29,7 +27,7 @@ while True: # program loop
         break
     #SHOW EXPENSES
     elif action.lower() == "show" or action.lower() == 's':
-        print("---YOUR EXPENSES---(%s)---" % hello.get_amount_of_rows(DATEI)) 
+        print("---YOUR EXPENSES---(%s)---" % hello.get_amount_of_rows(DATEI))
         hello.print_list_of_things(DATEI)
         print("\nThese all together cost "+ str(round(hello.sum_of_total_prices(), 2)) +"€") if hello.get_amount_of_rows(DATEI) > 1 else 1
         print("---------\n")
@@ -38,7 +36,7 @@ while True: # program loop
         unwanted_item = input("What do you want to delete? (To delete every expense type 'all') ")
         hello.delete_row(unwanted_item)
     #ADD EXPENSE
-    elif action.lower() == "a" or action.lower() == "add":    
+    elif action.lower() == "a" or action.lower() == "add":
         expense = input("Cateegory (e.g. food, transport, uni): ")
         price = input("How much will that cost in €?: ")
         try:
@@ -47,14 +45,16 @@ while True: # program loop
                 print("Alright, it went through")
             
         except ValueError:
-            print("Error: Input a number.") 
+            print("Error: Input a number.")
     #VIEW BALANCE
     elif action.lower() == "vb" or action.lower() == "v":
-        print("You have " + str(round(hello.get_balance(), 2)) +"€\n")  
+        balance = hello.get_balance()
+        print(f"You currently have {abs(round(balance, 2)) if round(balance, 2) == 0.0 else round(balance, 2)}€\n")
     #CHANGE BALANCE
     elif action.lower() == "m":
-        print("You currently have " + str(round(hello.get_balance(), 2)) +"€\n")  
-        new_balance = input("Modify balance(e.g 200, -90.9, +19.99): ")
+        balance = hello.get_balance()
+        print(f"You currently have {abs(round(balance, 2)) if round(balance, 2) == 0.0 else round(balance, 2)}€\n")
+        new_balance = input("Modify balance (e.g 200, -90.9, +19.99): ")
         if hello.is_float(new_balance):
             hello.add_balance(new_balance)
         else:
@@ -63,4 +63,4 @@ while True: # program loop
     else:
         print("You've got to input one of the things I listed...")
 
-print("Aight I'm done.")
+print("Aight pack it up.")
