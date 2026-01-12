@@ -2,6 +2,7 @@ import csv
 import os
 import wikipediaapi as wiki
 import yello
+# Defining stuff yk the drill
 DATEI = "ausgaben.csv"
 BALANCE_FILE = "balance.csv"
 EMPTY_ROW = ["", ""]
