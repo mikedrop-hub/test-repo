@@ -2,8 +2,6 @@ import hello
 import time
 import random
 
-print(random.random())
-
 DATEI = "expenses.csv"
 
 print("--- TOP TIER BUDGETING PROGRAM (the people love it) ---\n")
