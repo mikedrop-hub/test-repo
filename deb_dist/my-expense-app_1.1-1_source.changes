@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 20:28:35 +0100
+Source: my-expense-app
+Built-For-Profiles: noudeb
+Architecture: source
+Version: 1.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: None <None>
+Changed-By: None <None>
+Changes:
+ my-expense-app (1.1-1) unstable; urgency=low
+ .
+   * source package automatically created by stdeb 0.11.0
+Checksums-Sha1:
+ 9049f7617cbcfcf9a82baa2f0593fceb780ddbed 854 my-expense-app_1.1-1.dsc
+ f30d93ac2cf697e5ced8a53f34c1d6bd692400af 3784 my-expense-app_1.1.orig.tar.gz
+ e04f7a53eb30ffa15b0c447af4d8a28e1cf11e67 936 my-expense-app_1.1-1.debian.tar.xz
+ 8d9aa305c743b492bd64a6e2ad9a3997911ad2f3 6515 my-expense-app_1.1-1_source.buildinfo
+Checksums-Sha256:
+ fb5de3d2472c25bd01d77f73b2c7938d5efc4657038c2e7423a9b9783678fa44 854 my-expense-app_1.1-1.dsc
+ 9f0c8a72ae5185079d825d6bc3b07dbec35c16fbd1cb3d936a3d21f80ae50ed4 3784 my-expense-app_1.1.orig.tar.gz
+ 5e63fe4df12de3e2e81576a7d609d65500a3d941288d4f394d56211395bf8ff7 936 my-expense-app_1.1-1.debian.tar.xz
+ 5edeeeff41091fecaa153c8a4138048c1a6af61c52d71edcf127e94bbaf9cbf3 6515 my-expense-app_1.1-1_source.buildinfo
+Files:
+ 6bf24828fe251bfb2b39878fdc018120 854 python optional my-expense-app_1.1-1.dsc
+ d2412cae9640b94ef4150360c528073a 3784 python optional my-expense-app_1.1.orig.tar.gz
+ 56893c6f7843b74bf28809a9a3ded9ff 936 python optional my-expense-app_1.1-1.debian.tar.xz
+ 080ebd30c0ce0fabd76cca3f1f9ebb4c 6515 python optional my-expense-app_1.1-1_source.buildinfo
