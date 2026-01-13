@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Tue, 13 Jan 2026 20:28:35 +0100
+Source: my-expense-app
+Binary: python3-my-expense-app
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 1.1-1
+Distribution: unstable
+Urgency: low
+Maintainer: None <None>
+Changed-By: None <None>
+Description:
+ python3-my-expense-app - Top Tier Budgeting Program
+Changes:
+ my-expense-app (1.1-1) unstable; urgency=low
+ .
+   * source package automatically created by stdeb 0.11.0
+Checksums-Sha1:
+ a63fd264b31ef63c5811b9fc1409a1db692f2823 6582 my-expense-app_1.1-1_amd64.buildinfo
+ 12988d79599afcb69f5a9473f0bd72fcd0f30ea2 4564 python3-my-expense-app_1.1-1_all.deb
+Checksums-Sha256:
+ aea43414aee5057cabbdfdf52f980c089b89e397c4bdee2200ea4b3f0570dec6 6582 my-expense-app_1.1-1_amd64.buildinfo
+ abc6f7bd2604b62f6c937a59a7448fd6291c29cc67c3a82f1ac76cdc7955b2f7 4564 python3-my-expense-app_1.1-1_all.deb
+Files:
+ 5654a307fd9e0edb4306118e0db2742e 6582 python optional my-expense-app_1.1-1_amd64.buildinfo
+ 1d59bde295c83ae664205a526bfb4660 4564 python optional python3-my-expense-app_1.1-1_all.deb

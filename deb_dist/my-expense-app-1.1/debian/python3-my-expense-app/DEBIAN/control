@@ -1,0 +1,12 @@
+Package: python3-my-expense-app
+Source: my-expense-app
+Version: 1.1-1
+Architecture: all
+Maintainer: None <None>
+Installed-Size: 27
+Depends: python3:any
+Section: python
+Priority: optional
+Homepage: None
+Description: Top Tier Budgeting Program
+ A top tier budgeting program that the people absolutely love.

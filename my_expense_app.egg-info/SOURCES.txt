@@ -1,0 +1,10 @@
+app.py
+setup.py
+hidden_stuff/__init__.py
+hidden_stuff/hello.py
+my_expense_app.egg-info/PKG-INFO
+my_expense_app.egg-info/SOURCES.txt
+my_expense_app.egg-info/dependency_links.txt
+my_expense_app.egg-info/entry_points.txt
+my_expense_app.egg-info/requires.txt
+my_expense_app.egg-info/top_level.txt

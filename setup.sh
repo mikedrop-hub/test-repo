@@ -10,8 +10,10 @@ fi
 source .venv/bin/activate
 
 # 3. Upgrade pip and install requirements
-echo "Installing dependencies..."
-pip install --upgrade pip
+echo "Installing dependencies and updating core build tools..."
+
+pip install --upgrade pip setuptools wheel
+
 if [ -f "hidden_stuff/requirements.txt" ]; then
     echo "Requirements found!"
     pip install -r hidden_stuff/requirements.txt
