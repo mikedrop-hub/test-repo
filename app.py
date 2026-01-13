@@ -4,8 +4,6 @@ import random
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# 2. Join that path with your folder and filename
 DATEI = os.path.join(BASE_DIR, "hidden_stuff", "expenses.csv")
 
 print("--- TOP TIER BUDGETING PROGRAM (the people love it) ---\n")
