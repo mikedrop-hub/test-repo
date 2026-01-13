@@ -3,8 +3,9 @@ import os
 import wikipediaapi as wiki
 
 # Defining stuff yk the drill
-DATEI = "expenses.csv"
-BALANCE_FILE = "balance.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATEI = os.path.join(BASE_DIR, "expenses.csv")
+BALANCE_FILE = os.path.join(BASE_DIR, "balance.csv")
 EMPTY_ROW = ["", ""]
 
 
