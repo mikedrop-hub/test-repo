@@ -1,7 +1,10 @@
-5a75e169f46bc1d07d9525dcb441f6a4  usr/bin/app.py
+f28dcca5db4a62d1c73aa4f22f564d3c  usr/bin/budget
+b5d27a360285c5eedfd035dd760006ef  usr/lib/python3/dist-packages/app.py
 d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/hidden_stuff/__init__.py
-ebc6510b9a5b0cf3331fd8e7b41457a6  usr/lib/python3/dist-packages/hidden_stuff/hello.py
-621a3718104c95691a0af3f2cb7b628c  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/PKG-INFO
+b9e386f5cb95cc52a831d919ad73e66c  usr/lib/python3/dist-packages/hidden_stuff/hello.py
+1696f7a85b158e17fdfee52eaa245806  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/PKG-INFO
 68b329da9893e34099c7d8ad5cb9c940  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/dependency_links.txt
-1dc15c7828648e45c25f535e17ae12f5  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/top_level.txt
-bd6ad818deacaab5c441b7cfa95748af  usr/share/doc/python3-my-expense-app/changelog.Debian.gz
+cb49bdf7e2c7cbe570927a10d52919a3  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/entry_points.txt
+e91af9609f2f19172ff3c18dcb50299f  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/requires.txt
+9b80a5c1e059de8d2021ad010012361d  usr/lib/python3/dist-packages/my_expense_app-1.1-py3.12.egg-info/top_level.txt
+267929cafff4c95c09b267d57ffcc67a  usr/share/doc/python3-my-expense-app/changelog.Debian.gz

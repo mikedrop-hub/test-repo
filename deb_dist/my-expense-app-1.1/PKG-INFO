@@ -4,9 +4,11 @@ Version: 1.1
 Summary: Top Tier Budgeting Program
 Author: Michael
 Author-email: michael@example.com
+Requires-Dist: wikipedia-api
 Dynamic: author
 Dynamic: author-email
 Dynamic: description
+Dynamic: requires-dist
 Dynamic: summary
 
 A top tier budgeting program that the people absolutely love.

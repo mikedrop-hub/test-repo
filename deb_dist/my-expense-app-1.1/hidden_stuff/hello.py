@@ -2,11 +2,24 @@ import csv
 import os
 import wikipediaapi as wiki
 
-# Defining stuff yk the drill
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATEI = os.path.join(BASE_DIR, "expenses.csv")
-BALANCE_FILE = os.path.join(BASE_DIR, "balance.csv")
+# --- DATA STORAGE SETUP ---
+# Redirect from BASE_DIR to the user's home folder
+HOME_DIR = os.path.expanduser("~/.my_budget")
+DATEI = os.path.join(HOME_DIR, "expenses.csv")
+BALANCE_FILE = os.path.join(HOME_DIR, "balance.csv")
 EMPTY_ROW = ["", ""]
+# Create the folder and files if they are missing
+if not os.path.exists(HOME_DIR):
+    os.makedirs(HOME_DIR)
+
+if not os.path.exists(DATEI):
+    with open(DATEI, 'w') as f:
+        pass # Create empty expenses file
+
+if not os.path.exists(BALANCE_FILE):
+    with open(BALANCE_FILE, 'w') as f:
+        f.write(["Total balance","0.0"]) # Start with a zero balance
+
 
 
 def is_float(input):
@@ -105,6 +118,7 @@ def get_row_by_index(file_input, target_row):
         for (counter,row) in enumerate(reader):
             if counter == target_row:
                 return row
+                
            
 def delete_row(item_to_be_deleted):
     new_file: list[list[str]]= []

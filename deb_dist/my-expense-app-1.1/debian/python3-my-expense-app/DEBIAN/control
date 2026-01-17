@@ -3,7 +3,7 @@ Source: my-expense-app
 Version: 1.1-1
 Architecture: all
 Maintainer: None <None>
-Installed-Size: 27
+Installed-Size: 31
 Depends: python3:any
 Section: python
 Priority: optional

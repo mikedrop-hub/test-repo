@@ -10,11 +10,11 @@ Build-Depends: python3-setuptools, python3-all, debhelper (>= 12)
 Package-List:
  python3-my-expense-app deb python optional arch=all
 Checksums-Sha1:
- f30d93ac2cf697e5ced8a53f34c1d6bd692400af 3784 my-expense-app_1.1.orig.tar.gz
- e04f7a53eb30ffa15b0c447af4d8a28e1cf11e67 936 my-expense-app_1.1-1.debian.tar.xz
+ fb49c529080827ffc2aa35c5dd8c57dcfc004b28 4171 my-expense-app_1.1.orig.tar.gz
+ 8332a3cc89ca765a9606e43667b083e3f08d23a9 936 my-expense-app_1.1-1.debian.tar.xz
 Checksums-Sha256:
- 9f0c8a72ae5185079d825d6bc3b07dbec35c16fbd1cb3d936a3d21f80ae50ed4 3784 my-expense-app_1.1.orig.tar.gz
- 5e63fe4df12de3e2e81576a7d609d65500a3d941288d4f394d56211395bf8ff7 936 my-expense-app_1.1-1.debian.tar.xz
+ f97383a6db0483f0f77f2732e5bf46e6ebd2caf22c160c0aa0dd9c7769d23753 4171 my-expense-app_1.1.orig.tar.gz
+ 97f8f83f29b3b27e6111173e04c5f94c23a5d66a9fb28033e8194a380a1a626a 936 my-expense-app_1.1-1.debian.tar.xz
 Files:
- d2412cae9640b94ef4150360c528073a 3784 my-expense-app_1.1.orig.tar.gz
- 56893c6f7843b74bf28809a9a3ded9ff 936 my-expense-app_1.1-1.debian.tar.xz
+ bb111fbbb27d2a125d531f3731dfc262 4171 my-expense-app_1.1.orig.tar.gz
+ 1c55abcf8a46a454f52fc9240160e733 936 my-expense-app_1.1-1.debian.tar.xz

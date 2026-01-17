@@ -8,17 +8,17 @@ import hidden_stuff.hello as hello
 # --- DATA STORAGE (No Header Version) ---
 DATA_DIR = os.path.expanduser("~/.my_budget")
 DATEI = os.path.join(DATA_DIR, "expenses.csv")
-def main():
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR)
+BALANCE_FILE = os.path.join(DATA_DIR, "balance.csv")
+EMPTY_ROW = ["", ""]
 
-    if not os.path.exists(DATEI):
-        with open(DATEI, 'w') as f:
-            pass 
+def main():
+
 
     print("--- TOP TIER BUDGETING PROGRAM (the people love it) ---\n")
 
     while True: # program loop
+    
+
         hello.print_total_balance()
         time.sleep(0.4 * random.random())
         print("Show list of expenses: S")

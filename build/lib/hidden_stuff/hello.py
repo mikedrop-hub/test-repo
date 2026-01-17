@@ -7,7 +7,7 @@ import wikipediaapi as wiki
 HOME_DIR = os.path.expanduser("~/.my_budget")
 DATEI = os.path.join(HOME_DIR, "expenses.csv")
 BALANCE_FILE = os.path.join(HOME_DIR, "balance.csv")
-
+EMPTY_ROW = ["", ""]
 # Create the folder and files if they are missing
 if not os.path.exists(HOME_DIR):
     os.makedirs(HOME_DIR)
@@ -16,11 +16,19 @@ if not os.path.exists(DATEI):
     with open(DATEI, 'w') as f:
         pass # Create empty expenses file
 
-if not os.path.exists(BALANCE_FILE):
-    with open(BALANCE_FILE, 'w') as f:
-        f.write("0.0") # Start with a zero balance
 
-EMPTY_ROW = ["", ""]
+def update():
+    if not os.path.exists(HOME_DIR):
+        os.makedirs(HOME_DIR)
+
+    if not os.path.exists(DATEI):
+        with open(DATEI, 'w') as f:
+            pass 
+    if not os.path.exists(BALANCE_FILE):
+        with open(BALANCE_FILE, 'w') as f:
+            pass 
+    
+
 
 
 def is_float(input):
@@ -31,6 +39,7 @@ def is_float(input):
         return False 
     
 def speichern(betrag, kategorie):
+    update()
     # 'a' steht für 'append' (anhängen), damit alte Daten nicht gelöscht werden
     if search(DATEI, kategorie) == EMPTY_ROW:
         with open(DATEI, mode='a', newline='') as f:
@@ -43,6 +52,7 @@ def speichern(betrag, kategorie):
 
 
 def get_amount_of_rows(file_input):
+    update()
     amount_of_rows = 0
     with open(file_input) as file:
         for row in file:
@@ -51,6 +61,7 @@ def get_amount_of_rows(file_input):
 
 
 def search(file, query) -> list[str]: # returns a row
+    update()
     query = str(query)
     with open(file, newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
@@ -59,9 +70,17 @@ def search(file, query) -> list[str]: # returns a row
                 #print("Found "+ str(query))
                 return row    
         return EMPTY_ROW    
+        
+with open(BALANCE_FILE, mode='a', newline='') as file:
+    writer = csv.writer(file)
+    balance = search(BALANCE_FILE, "Total balance")[1]
+    print("This is the balance: " + balance)
+    if not(is_float(balance)):
+        writer.writerow(["Total balance", "0.0"])
            
 
 def get_price(item): #item is a row
+    update()
     try:
         price = item[0]
         #print("The expense of " + item[1] + " is " + price + "€")
@@ -71,6 +90,7 @@ def get_price(item): #item is a row
         return float(price)
     
 def get_expense(item): #item is a row
+    update()
     try:
         expense = item[1]
         #print("The expense of " + item[1] + " is " + price + "€")
@@ -80,10 +100,12 @@ def get_expense(item): #item is a row
         ""
 
 def clear_file(file):
+    update()
     with open(file, mode="w+"):
         pass
 
 def check_if_sure(thing_that_is_boutta_be_done) -> bool:
+    update()
     thing_that_is_boutta_be_done = str(thing_that_is_boutta_be_done)
     yes_or_no = input("Are you sure you want to "+ thing_that_is_boutta_be_done +"? (y or anything else) ")
     if yes_or_no.lower() == "y":
@@ -93,17 +115,23 @@ def check_if_sure(thing_that_is_boutta_be_done) -> bool:
     return False
 
 def get_balance() -> float:
+    update()
     with open(BALANCE_FILE) as file:
         reader = csv.reader(file)
         balance = search(BALANCE_FILE, "Total balance")[1]
-        #print(balance)
+        #print("This is the balance: " + balance)
         if not(is_float(balance)):
-            print("add_balance() says: The balance aint no number and this is probably problematic :(")
+            #print("add_balance() says: The balance aint no number and this is probably problematic :(")
+            with open(BALANCE_FILE, mode='a', newline='') as file:
+                writer = csv.writer(file)
+                print("This is the balance: " + balance)
+                writer.writerow(["Total balance", "0.0"])
             return 0.0
         else: 
             return float(balance)
         
 def add_balance(amount_to_be_added):
+    update()
     balance = get_balance() 
     #print("Got balance: " + str(balance))
     new_balance = float(balance) + float(amount_to_be_added)
@@ -114,13 +142,16 @@ def add_balance(amount_to_be_added):
         writer.writerow(["Total balance", new_balance])
            
 def get_row_by_index(file_input, target_row):
+    update()
     with open(file_input) as file:
         reader = csv.reader(file)
         for (counter,row) in enumerate(reader):
             if counter == target_row:
                 return row
+                
            
 def delete_row(item_to_be_deleted):
+    update()
     new_file: list[list[str]]= []
     to_be_deleted_items: list[list[str]] = []
     counter_of_to_be_deleted_items = 0
@@ -148,15 +179,18 @@ def delete_row(item_to_be_deleted):
             print(item_to_be_deleted +" might be a typo because I couldn't find it.")   
 
 def clear_balance():
+    update()
     clear_file(BALANCE_FILE)
     with open(BALANCE_FILE, "a") as file:
         writer = csv.writer(file)
         writer.writerow(["Total balance", 0.0])
 
 def get_total_money_left():
+    update()
     return get_balance() - sum_of_total_prices()
     
 def sum_of_total_prices():
+    update()
     sum_of_total_prices = 0.0
     with open(DATEI) as file:
         reader = csv.reader(file)
@@ -168,12 +202,14 @@ def get_total_rounded_money_left():
     return round(get_total_money_left(), 2)
 
 def print_total_balance():
+    update()
     if get_total_money_left() < 0:
         print("You are "+ str(abs(get_total_rounded_money_left())) +"€ in debt. Get your funny up, brokie.")
     elif get_total_money_left() >= 0:
         print("You have "+str(get_total_rounded_money_left()) +"€ of spendable money.")
 
 def print_list_of_things(file_input):
+    update()
     with open(file_input) as file:
         reader = csv.reader(file)
         for row in reader:

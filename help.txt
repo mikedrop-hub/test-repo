@@ -1,0 +1,23 @@
+Clone repo with
+	git clone URL
+Then cd into directory and run the setup.sh file with bash
+	bash setup.sh
+Activate the automatically created venv
+	source .venv/bin/activate
+Do this in a order that makes it work
+	sudo dpkg -i deb_dist/python3-my-expense-app_1.1-1_all.deb
+	//or whatever its named inside the deb_dist file
+	
+	python3 setup.py --command-packages=stdeb.command bdist_deb
+	
+Importantly:
+run pipx install . --force
+//Do not forget the dot between install and --force!
+
+
+This works pretty well icl
+cd test-repo/
+  actvenv
+  sudo dpkg -i deb_dist/python3-my-expense-app_1.1-1_all.deb
+  python3 setup.py     
+  pipx install . --force

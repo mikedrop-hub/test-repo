@@ -3,14 +3,14 @@ Source: my-expense-app
 Architecture: source
 Version: 1.1-1
 Checksums-Md5:
- 6bf24828fe251bfb2b39878fdc018120 854 my-expense-app_1.1-1.dsc
+ 39de21b54d3fba20d70ba27c02f2f39a 854 my-expense-app_1.1-1.dsc
 Checksums-Sha1:
- 9049f7617cbcfcf9a82baa2f0593fceb780ddbed 854 my-expense-app_1.1-1.dsc
+ 6ea3a2241ea0932a07121eca6bdbf55515a7ee0b 854 my-expense-app_1.1-1.dsc
 Checksums-Sha256:
- fb5de3d2472c25bd01d77f73b2c7938d5efc4657038c2e7423a9b9783678fa44 854 my-expense-app_1.1-1.dsc
+ de28e7e377f7615807486c9989eab1e7d6a087f180e44600dc742ca2c40a5736 854 my-expense-app_1.1-1.dsc
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Tue, 13 Jan 2026 20:28:36 +0100
+Build-Date: Sat, 17 Jan 2026 18:15:07 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -127,8 +127,8 @@ Installed-Build-Depends:
  libperl5.38t64 (= 5.38.2-3.2ubuntu0.2),
  libpipeline1 (= 1.5.7-2),
  libpython3-stdlib (= 3.12.3-0ubuntu2.1),
- libpython3.12-minimal (= 3.12.3-1ubuntu0.9),
- libpython3.12-stdlib (= 3.12.3-1ubuntu0.9),
+ libpython3.12-minimal (= 3.12.3-1ubuntu0.10),
+ libpython3.12-stdlib (= 3.12.3-1ubuntu0.10),
  libquadmath0 (= 14.2.0-4ubuntu2~24.04),
  libreadline8t64 (= 8.2-4build1),
  libseccomp2 (= 2.5.5-1ubuntu3.1),
@@ -172,8 +172,8 @@ Installed-Build-Depends:
  python3-minimal (= 3.12.3-0ubuntu2.1),
  python3-pkg-resources (= 68.1.2-2ubuntu1.2),
  python3-setuptools (= 68.1.2-2ubuntu1.2),
- python3.12 (= 3.12.3-1ubuntu0.9),
- python3.12-minimal (= 3.12.3-1ubuntu0.9),
+ python3.12 (= 3.12.3-1ubuntu0.10),
+ python3.12-minimal (= 3.12.3-1ubuntu0.10),
  readline-common (= 8.2-4build1),
  rpcsvc-proto (= 1.4.2-0ubuntu7),
  sed (= 4.9-2build1),
@@ -188,4 +188,4 @@ Environment:
  DEB_BUILD_OPTIONS="parallel=12"
  DEB_BUILD_PROFILES="noudeb"
  LANG="en_US.UTF-8"
- SOURCE_DATE_EPOCH="1768332515"
+ SOURCE_DATE_EPOCH="1768670101"
